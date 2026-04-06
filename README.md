@@ -27,6 +27,10 @@ Manage and display 3 UI states:
 - Add an interface for the weather API.
 - Create the data transfer objects (DTOs) for the network response.
 
+**Recommended Public APIs:**
+- **[Open-Meteo](https://open-meteo.com/):** Highly recommended for beginners. It is completely **free and requires no API key**. It offers a unified geocoding and weather API.
+- **[OpenWeatherMap](https://openweathermap.org/api):** The industry standard for weather tutorials. It offers a `q={cityName}` endpoint which is extremely simple to hook into, though it requires registering for a free API key.
+
 ### 4. Domain Layer
 - Create a `Weather` model representing the domain data.
 - Create a `GetWeatherUseCase` class to fetch the data.
