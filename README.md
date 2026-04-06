@@ -57,3 +57,38 @@ Manage and display 3 UI states:
 - Code should be idiomatic Kotlin.
 - Do not implement a database (e.g. Room).
 - Keep everything beginner-friendly and well-documented.
+
+---
+
+## Getting Started / Git Workflow
+
+To keep your work organized and ensure the `main` branch remains clean, please follow these steps before you start coding:
+
+1. **Clone the repository:**
+   ```bash
+   git clone git@github.com:asifsheikh/KotlinWeatherApp.git
+   cd KotlinWeatherApp
+   ```
+
+2. **Create a new branch for your feature:**
+   Instead of coding directly on `main`, create a new branch. Let's name it `feature/weather-app`.
+   ```bash
+   git checkout -b feature/weather-app
+   ```
+
+3. **Make your changes:**
+   Start building the architecture (data, domain, presentation layers) following the requirements above.
+
+4. **Commit your work periodically:**
+   ```bash
+   git add .
+   git commit -m "Add domain and data layers for Weather features"
+   ```
+
+5. **Push your branch to GitHub:**
+   ```bash
+   git push -u origin feature/weather-app
+   ```
+
+6. **Open a Pull Request:**
+   Once pushed, go to GitHub and open a Pull Request (PR) from your `feature/weather-app` branch into `main`. This allows us to review the code together!
