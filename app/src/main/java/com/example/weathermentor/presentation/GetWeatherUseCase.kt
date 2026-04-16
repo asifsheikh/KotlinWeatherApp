@@ -10,6 +10,6 @@ class GetWeatherUseCase @Inject constructor(
     private val weatherRepo: WeatherRepo
 ) {
     operator fun invoke(city: String): Flow<Weather> = flow {
-        weatherRepo.getWeather(city)
+        emit(weatherRepo.getWeather(city))
     }
 }
