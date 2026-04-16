@@ -15,7 +15,7 @@ import javax.inject.Singleton
 object ApiModule {
 
     private const val BASE_URL = ""
-    private const val appid = ""
+    const val appid = ""
 
     @Provides
     @Singleton
