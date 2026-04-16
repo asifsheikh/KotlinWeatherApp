@@ -18,7 +18,13 @@ fun WeatherScreen(
     val uiState by weatherViewModel.uiState.collectAsStateWithLifecycle()
 
     when (val state = uiState) {
-        is WeatherUiState.Success -> WeatherPage(weather = state.value, modifier = modifier)
+        is WeatherUiState.Success -> WeatherPage(
+            weather = state.value,
+            modifier = modifier
+        ) { city ->
+            weatherViewModel.updateCity(city)
+        }
+
         is WeatherUiState.Error -> ErrorPage(message = state.message, modifier = modifier)
         is WeatherUiState.Loading -> LoadingPage()
     }
