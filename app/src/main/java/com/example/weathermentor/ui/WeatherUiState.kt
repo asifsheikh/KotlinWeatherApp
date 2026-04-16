@@ -1,4 +1,4 @@
-package com.example.weathermentor.presentation
+package com.example.weathermentor.ui
 
 import com.example.weathermentor.data.WeatherX
 
