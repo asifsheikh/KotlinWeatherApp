@@ -30,7 +30,7 @@ fun WeatherPage(modifier: Modifier = Modifier, weather: Weather, onNewCityClick:
     ) {
         Row {
             TextField(
-                value = weather.name,
+                value = city,
                 onValueChange = { city = it },
                 label = { Text("城市") }
             )
