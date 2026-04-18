@@ -1,6 +1,6 @@
-package com.example.weathermentor.data
+package com.example.weathermentor.repo.remote
 
-data class WeatherX(
+data class WeatherCurrent(
     val description: String,
     val icon: String,
     val id: Int,
