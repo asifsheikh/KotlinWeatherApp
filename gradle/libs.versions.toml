@@ -1,8 +1,8 @@
 [versions]
 # Build Tools and Plugins
 agp = "8.9.0"
-kotlin = "2.3.20"
-ksp = "2.3.6"
+kotlin = "2.0.0"
+ksp = "2.0.0-1.0.21"
 
 # AndroidX
 coreKtx = "1.18.0"
