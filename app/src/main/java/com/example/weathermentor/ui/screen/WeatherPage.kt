@@ -18,10 +18,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.weathermentor.data.Weather
+import com.example.weathermentor.domain.WeatherDomain
 
 @Composable
-fun WeatherPage(modifier: Modifier = Modifier, weather: Weather, onNewCityClick: (String) -> Unit) {
+fun WeatherPage(modifier: Modifier = Modifier, weather: WeatherDomain, onNewCityClick: (String) -> Unit) {
     var city by remember { mutableStateOf("") }
     Column(
         modifier = modifier.fillMaxSize(),
@@ -32,7 +32,7 @@ fun WeatherPage(modifier: Modifier = Modifier, weather: Weather, onNewCityClick:
             TextField(
                 value = city,
                 onValueChange = { city = it },
-                label = { Text("城市") }
+                label = { Text("City") }
             )
             Button(onClick = {
                 onNewCityClick(city)
@@ -41,7 +41,7 @@ fun WeatherPage(modifier: Modifier = Modifier, weather: Weather, onNewCityClick:
             }
         }
         Spacer(modifier = Modifier.height(16.dp))
-        Text("City = ${weather.name}", modifier = Modifier.padding(16.dp))
-        Text("Weather: ${weather.main.temp}", modifier = Modifier.padding(16.dp))
+        Text("City = ${weather.city}", modifier = Modifier.padding(16.dp))
+        Text("Weather: ${weather.temp}", modifier = Modifier.padding(16.dp))
     }
 }

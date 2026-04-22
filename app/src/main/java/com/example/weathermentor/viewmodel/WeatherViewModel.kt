@@ -2,7 +2,7 @@ package com.example.weathermentor.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.weathermentor.presentation.GetWeatherUseCase
+import com.example.weathermentor.domain.GetWeatherUseCase
 import com.example.weathermentor.ui.WeatherUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -25,16 +25,16 @@ class WeatherViewModel @Inject constructor(
     @OptIn(ExperimentalCoroutinesApi::class)
     val uiState: StateFlow<WeatherUiState> = _city.flatMapLatest { city ->
         weatherUseCase.invoke(city = city)
-            .map {
-                WeatherUiState.Success(value = it)
-            }.catch {
-                WeatherUiState.Error(message = it.message.toString())
-            }
-    }.stateIn(
-        scope = viewModelScope,
-        started = SharingStarted.WhileSubscribed(5000),
-        initialValue = WeatherUiState.Loading
-    )
+    }.map {
+            WeatherUiState.Success(value = it)
+        }.catch {
+            WeatherUiState.Error(message = it.message.toString())
+        }
+        .stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(5000),
+            initialValue = WeatherUiState.Loading
+        )
 
     fun updateCity(newCity: String) {
         _city.value = newCity

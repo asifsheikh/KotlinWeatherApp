@@ -1,4 +1,6 @@
-package com.example.weathermentor.data
+package com.example.weathermentor.repo.remote
+
+import com.example.weathermentor.data.Main
 
 data class Weather(
     val base: String,
@@ -9,5 +11,5 @@ data class Weather(
     val name: String,
     val timezone: Int,
     val visibility: Int,
-    val weather: List<WeatherX>,
+    val weather: List<WeatherCurrent>,
 )
