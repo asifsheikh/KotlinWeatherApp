@@ -8,8 +8,6 @@ pluginManagement {
                 includeGroupByRegex("androidx.*")
             }
         }
-        maven("https://oss.sonatype.org/content/repositories/snapshots")
-
         mavenCentral()
         gradlePluginPortal()
     }
